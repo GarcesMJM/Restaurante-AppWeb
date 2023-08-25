@@ -52,7 +52,7 @@ section {
 }
 
 .section-bg {
-  background-color: #eee;
+  background-color: #f1f1f1;
 }
 
 .section-header {
@@ -323,7 +323,7 @@ section {
     font-family: var(--font-secondary);
     font-size: 16px;
     font-weight: 600;
-    color: #7f7f90;
+    color: #7f8f90;
     white-space: nowrap;
     transition: 0.3s;
     position: relative;
