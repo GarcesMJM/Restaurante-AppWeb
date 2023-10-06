@@ -8,6 +8,8 @@
   h1 {
     margin: 0;
     padding: 0;
+    float:none;
+    text-align: center;
   }
   .custom-form {
     min-width: 300px;
@@ -49,3 +51,60 @@
     box-shadow: 3px 3px 8px #b1b1b1, -3px -3px 8px #ffffff;
     cursor: pointer;
   }
+  
+  #back{
+    width: 40px; 
+    height: 40px; 
+    background-color: #bcd8c1;
+    color: white;
+    font-size: 40px;
+    text-align: center;
+    line-height: 40px; 
+    border-radius: 50%;
+    float: left;
+  }
+
+  #back a{
+    color: #ffffff;
+    font-weight: 1000;
+  }
+
+  #register{
+    text-align: right;
+  }
+  
+  #register p{
+    position: relative;
+
+  }
+  
+  #register a{
+    color: #bcd8c1;
+    position: relative;
+    
+  } 
+
+  #a,p{
+    display: inline-block;
+  }
+
+  #forgotpw{
+    text-align: right;
+  }
+  
+  #forgotpw p{
+    position: relative;
+
+  }
+  
+  #forgotpw a{
+    color: #bcd8c1;
+    position: relative;
+    
+  } 
+
+  #a,p{
+    display: inline-block;
+  }
+
+  

@@ -1,5 +1,8 @@
 <div class="register">
     <form class="custom-form" method="post">
+      <div id="back">
+        <a routerLink="/" id=""><</a>
+       </div>
       <h1>Register</h1>
       <input
         type="email"
@@ -23,5 +26,9 @@
         required="required"
       />
       <button type="submit" (click)="register()">Register</button>
+      <div id="register">
+        <p>¿Ya tienes una cuenta?</p>
+        <a routerLink="/login">Inicia Sesión</a>
+      </div>
     </form>
   </div>

@@ -1,5 +1,8 @@
 <div class="login">
   <form class="custom-form" method="post">
+   <div id="back">
+    <a routerLink="/" id=""><</a>
+   </div>
     <h1>Login</h1>
     <input
       type="email"
@@ -16,5 +19,14 @@
       required="required"
     />
     <button type="submit" (click)="login()">Log in</button>
+    <div id="register">
+      <p>¿No tienes una cuenta?</p>
+      <a routerLink="/register">Regístrate</a>
+    </div>
+    <div id="forgotpw">
+      <p>¿Olvidate tu contraseña?</p>
+      <a routerLink="/register">Recuperar contraseña</a>
+    </div>
+    
   </form>
 </div>
