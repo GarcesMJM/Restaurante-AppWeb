@@ -1,7 +1,6 @@
 import { routing } from "./app-routing.module";
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
-import { MatDialogModule } from '@angular/material/dialog';
 
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from "./app.component";
@@ -11,7 +10,7 @@ import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [AppComponent, LoginComponent, RegisterComponent, HomeComponent],
-  imports: [FormsModule, MatDialogModule,  BrowserModule, routing],
+  imports: [FormsModule, BrowserModule, routing],
   providers: [],
   bootstrap: [AppComponent],
 })
