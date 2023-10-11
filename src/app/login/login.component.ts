@@ -1,5 +1,5 @@
-import { FormsModule } from '@angular/forms';
 import { Component } from "@angular/core";
+import { ForgotpwComponent } from "../forgotpw/forgotpw.component";
 
 @Component({
   selector: "app-login",
@@ -15,5 +15,7 @@ export class LoginComponent {
   login() {
     console.log(this.email);
     console.log(this.password);
+    
+    
   }
 }

@@ -1,17 +1,19 @@
 <div class="register">
-    <form class="custom-form" method="post">
+    <form  class="custom-form" >
       <div id="back">
         <a routerLink="/" id=""><</a>
        </div>
       <h1>Register</h1>
       <input
-        type="email"
-        [(ngModel)]="email"
-        name="email"
-        placeholder="Email"
+        id="username"
+        type="username"
+        [(ngModel)]="username"
+        name="username"
+        placeholder="Username"
         required="required"
       />
       <input
+        id="password"
         type="password"
         [(ngModel)]="password"
         name="password"
@@ -19,6 +21,7 @@
         required="required"
       />
       <input
+        id="confpassword"
         type="password"
         [(ngModel)]="confirmPassword"
         name="password"
