@@ -190,22 +190,22 @@
             <p>Datos de <span>reserva</span></p>
           </div>
   
-          <form action="#" method="post" role="form" class="php-email-form p-3 p-md-4">
+          <form id="book" (submit)="book()" class="php-email-form p-3 p-md-4">
             <div class="row">
               <div class="col-xl-6 form-group">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Nombre completo" required />
+                <input type="text" [(ngModel)]="name" name="name" class="form-control" id="name" placeholder="Nombre completo" required />
               </div>
               <div class="col-xl-6 form-group">
-                <input type="email" class="form-control" name="email" id="email" placeholder="Email" required />
+                <input type="email" [(ngModel)]="email" class="form-control" name="email" id="email" placeholder="Email" required />
               </div>
             </div>
 
             <div class="row">
                 <div class="col-xl-6 form-group">
-                  <input type="text" name="num" class="form-control" id="num" placeholder="Número de personas" required />
+                  <input type="text" [(ngModel)]="num" name="num" class="form-control" id="num" placeholder="Número de personas" required />
                 </div>
                 <div class="col-xl-6 form-group">
-                    <select class="form-control" required>
+                    <select name="sede" [(ngModel)]="sede" id="sede" class="form-control" required>
                         <option value="" disabled selected>Selecciona la sede</option>
                         <option value="Laureles">Laureles</option>
                         <option value="Poblado">Poblado</option>
@@ -216,10 +216,10 @@
 
             <div class="row">
                 <div class="col-xl-6 form-group">
-                  <input type="date" name="date" class="form-control" id="date" placeholder="Fecha" required />
+                  <input type="date" [(ngModel)]="date" name="date" class="form-control" id="date" placeholder="Fecha" required />
                 </div>
                 <div class="col-xl-6 form-group">
-                  <input type="time" class="form-control" name="time" id="time" placeholder="Hora" required />
+                  <input type="time" [(ngModel)]="time" class="form-control" name="time" id="time" placeholder="Hora" required />
                 </div>
             </div>
 
