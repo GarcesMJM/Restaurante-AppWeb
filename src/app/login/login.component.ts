@@ -1,4 +1,7 @@
 import { Component } from "@angular/core";
+import {Router} from "@angular/router";
+import { CookieService } from 'ngx-cookie';
+import { ToastrService } from 'ngx-toastr'
 import axios from "axios";
 
 @Component({
@@ -6,38 +9,38 @@ import axios from "axios";
   templateUrl: "./login.component.html",
   styleUrls: ["./login.component.css"],
 })
+
 export class LoginComponent {
   username: string="";
   password: string="";
   readonly APIUrl="http://localhost/";
 
-  constructor() {}
+  constructor(private router: Router,  private toastr: ToastrService,private cookieService: CookieService,) {}
 
   login() {
-    var user = (<HTMLInputElement>document.getElementById("username")).value;
-    var passwd = (<HTMLInputElement>document.getElementById("password")).value;
-
-    if (!user || !passwd) {
+    if (!this.username || !this.password) {
       alert('Por favor ingrese todos los campos.');
       return;
     }
 
     axios.post( this.APIUrl+'iniciarsesion',
       {
-        username : user,
-        password : passwd,
+        username :this.username,
+        password : this.password,
       }
     )
     .then(
       (res) => {
-         alert(res.data);
-         console.log(res)
-         
+          if(res && res.data){
+            this.toastr.success('¡Operación exitosa!', 'Éxito')
+            this.cookieService.put('token', res.data);
+            this.router.navigate(['/perfil']);
+          }else {
+            this.toastr.success('¡Operación exitosa!', 'Denegado')
+          }
       })
       .catch((error) =>{
         alert(error);
-      });
-    
-    
+      });    
   }
 }

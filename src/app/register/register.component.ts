@@ -1,11 +1,14 @@
 import { Component } from "@angular/core";
+import {Router} from "@angular/router"
 import axios from "axios";
+import { ToastrService } from 'ngx-toastr'
 
 @Component({
   selector: "app-register",
   templateUrl: "./register.component.html",
   styleUrls: ["./register.component.css"],
-})
+}
+)
 export class RegisterComponent {
   username: string='';
   password: string='';
@@ -13,33 +16,32 @@ export class RegisterComponent {
   readonly APIUrl="http://localhost/";
 
 
-  constructor() {}
+  constructor(private router: Router, private toastr: ToastrService) {}
   
 
   register() {
-    var user = (<HTMLInputElement>document.getElementById("username")).value;
-    var passwd = (<HTMLInputElement>document.getElementById("password")).value;
-    var confpasswd = (<HTMLInputElement>document.getElementById("confpassword")).value;
-
-    if (!user || !passwd || !confpasswd) {
+      if (!this.username || !this.password || !this.confirmPassword) {
       alert('Por favor ingrese todos los campos.');
       return;
     }
 
-    if (passwd !== confpasswd) {
+    if (this.password !== this.confirmPassword) {
       alert('Las contraseñas no coinciden.');
       return;
     }
 
     axios.post( this.APIUrl+'register',
       {
-        username : user,
-        password : passwd,
+        username : this.username,
+        password : this.password,
       }
     )
     .then(
       (res) => {
-         alert(res);
+         if(res.data == true){
+          this.toastr.success('¡Operación exitosa!', 'Éxito')
+          this.router.navigate(['/login'])
+         }
       })
       .catch((error) =>{
         alert(error);

@@ -1,7 +1,8 @@
 import { routing } from "./app-routing.module";
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
-
+import { ToastrModule } from 'ngx-toastr';
+import { CookieModule } from 'ngx-cookie';
 
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from "./app.component";
@@ -13,8 +14,9 @@ import { PerfilComponent } from "./perfil/perfil.component";
 
 @NgModule({
   declarations: [AppComponent, LoginComponent, RegisterComponent, HomeComponent, ForgotpwComponent, PerfilComponent],
-  imports: [FormsModule, BrowserModule, routing],
+  imports: [FormsModule, BrowserModule,ToastrModule.forRoot(), CookieModule.withOptions(), routing],
   providers: [],
   bootstrap: [AppComponent],
 })
+
 export class AppModule {}
