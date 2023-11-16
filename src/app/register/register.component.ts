@@ -1,8 +1,9 @@
 import { Component } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
-import { Subscriber } from "rxjs";
 import axios from "axios";
-import { FormGroup } from "@angular/forms";
+axios.defaults.proxy = {
+  host: 'http://localhost/',
+  port: 80,
+};
 
 @Component({
   selector: "app-register",
@@ -22,21 +23,30 @@ export class RegisterComponent {
   register() {
     var user = (<HTMLInputElement>document.getElementById("username")).value;
     var passwd = (<HTMLInputElement>document.getElementById("password")).value;
-    //var confpasswd = (<HTMLInputElement>document.getElementById("confpassword")).value;
+    var confpasswd = (<HTMLInputElement>document.getElementById("confpassword")).value;
 
-    axios.post( this.APIUrl+'create',
+    if (!user || !passwd || !confpasswd) {
+      alert('Por favor ingrese todos los campos.');
+      return;
+    }
+
+    if (passwd !== confpasswd) {
+      alert('Las contraseñas no coinciden.');
+      return;
+    }
+
+    axios.post( this.APIUrl+'register',
       {
         username : user,
         password : passwd,
-        //confpassword : confpasswd
       }
     )
     .then(
       (res) => {
          alert(res);
-      },
-      (error) => {
-        alert(String(error));
+      })
+      .catch((error) =>{
+        alert(error);
       });
   }
 

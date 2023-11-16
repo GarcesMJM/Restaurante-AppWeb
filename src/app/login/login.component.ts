@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { ForgotpwComponent } from "../forgotpw/forgotpw.component";
+import axios from "axios";
 
 @Component({
   selector: "app-login",
@@ -7,14 +7,36 @@ import { ForgotpwComponent } from "../forgotpw/forgotpw.component";
   styleUrls: ["./login.component.css"],
 })
 export class LoginComponent {
-  email: string="";
+  username: string="";
   password: string="";
+  readonly APIUrl="http://localhost/";
 
   constructor() {}
 
   login() {
-    console.log(this.email);
-    console.log(this.password);
+    var user = (<HTMLInputElement>document.getElementById("username")).value;
+    var passwd = (<HTMLInputElement>document.getElementById("password")).value;
+
+    if (!user || !passwd) {
+      alert('Por favor ingrese todos los campos.');
+      return;
+    }
+
+    axios.post( this.APIUrl+'iniciarsesion',
+      {
+        username : user,
+        password : passwd,
+      }
+    )
+    .then(
+      (res) => {
+         alert(res.data);
+         console.log(res)
+         
+      })
+      .catch((error) =>{
+        alert(error);
+      });
     
     
   }
