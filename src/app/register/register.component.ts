@@ -1,9 +1,5 @@
 import { Component } from "@angular/core";
 import axios from "axios";
-axios.defaults.proxy = {
-  host: 'http://localhost/',
-  port: 80,
-};
 
 @Component({
   selector: "app-register",

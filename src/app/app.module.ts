@@ -9,7 +9,7 @@ import { LoginComponent } from "./login/login.component";
 import { RegisterComponent } from "./register/register.component";
 import { HomeComponent } from './home/home.component';
 import { ForgotpwComponent } from './forgotpw/forgotpw.component';
-import { PerfilComponent } from './perfil/perfil.component';
+import { PerfilComponent } from "./perfil/perfil.component";
 
 @NgModule({
   declarations: [AppComponent, LoginComponent, RegisterComponent, HomeComponent, ForgotpwComponent, PerfilComponent],
