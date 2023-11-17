@@ -1,7 +1,5 @@
 import { Component } from "@angular/core";
-import {Router} from "@angular/router";
-import { CookieService } from 'ngx-cookie';
-import { ToastrService } from 'ngx-toastr'
+import Swal from 'sweetalert2';
 import axios from "axios";
 
 @Component({
@@ -17,8 +15,6 @@ export class BookingComponent {
   date: string="";
   time: string="";
   readonly APIUrl="http://localhost/";
-
-  constructor(private router: Router,  private toastr: ToastrService,private cookieService: CookieService,) {}
 
   book() {
     if (!this.name || !this.email || !this.num || !this.sede || !this.date || !this.time) {
@@ -45,14 +41,38 @@ export class BookingComponent {
     .then(
       (res) => {
           if(res && res.data){
-            console.log(res.data)
+            console.log(res.data);
+            Swal.fire({
+              title: res.data,
+              html: `<i>A nombre de</i><br/><b>${this.name}</b>
+                    <br/><b>Sede: </b> ${this.sede}
+                    <br/><b>Fecha: </b> ${this.date}
+                    <br/><b>Hora: </b> ${this.time}
+                    <br/><b>Personas: </b> ${this.num}`,
+              icon: "success"
+            });
+            this.name="";
+            this.email="";
+            this.num="";
+            this.sede="";
+            this.date="";
+            this.time="";
           }else {
-            console.log('¡Algo salió mal en el servidor!')
+            console.log('¡Algo salió mal en el servidor!');
+            Swal.fire({
+              icon: "error",
+              title: "Oops...",
+              text: "¡Algo salió mal en el servidor!"
+            });
           }
       }
     )
     .catch((error) =>{
-      alert(error);
-    });   
+      Swal.fire({
+        icon: "error",
+        title: "Error al contactar con el servidor",
+        text: error
+      });
+    });
   }
 }
