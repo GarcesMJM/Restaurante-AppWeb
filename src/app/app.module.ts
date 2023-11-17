@@ -12,9 +12,10 @@ import { HomeComponent } from './home/home.component';
 import { ForgotpwComponent } from './forgotpw/forgotpw.component';
 import { PerfilComponent } from "./perfil/perfil.component";
 import { BookingComponent } from './booking/booking.component';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterComponent, HomeComponent, ForgotpwComponent, PerfilComponent, BookingComponent],
+  declarations: [AppComponent, LoginComponent, RegisterComponent, HomeComponent, ForgotpwComponent, PerfilComponent, BookingComponent, AdminComponent],
   imports: [FormsModule, BrowserModule,ToastrModule.forRoot(), CookieModule.withOptions(), routing],
   providers: [],
   bootstrap: [AppComponent],
