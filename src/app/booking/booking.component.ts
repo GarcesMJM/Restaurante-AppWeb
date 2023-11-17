@@ -25,15 +25,17 @@ export class BookingComponent {
     // Obtén el nombre de usuario desde la ruta y luego obtén la información del usuario
     this.route.params.subscribe(params => {
       this.nombreUsuario = params['nombreUsuario'];
+      console.log(this.nombreUsuario);
     });
   }
 
   book() {
 
-    if (!this.name || !this.email || !this.num || !this.sede || !this.date || !this.time) {
+    if (!this.nombreUsuario || !this.name || !this.email || !this.num || !this.sede || !this.date || !this.time) {
       alert('Por favor ingrese todos los campos.');
       return;
     }
+    console.log(this.nombreUsuario);
     console.log(this.name);
     console.log(this.email);
     console.log(this.num);
@@ -43,11 +45,12 @@ export class BookingComponent {
 
     axios.post( this.APIUrl+'reservar',
       {
-        name :this.name,
+        username: this.nombreUsuario,
+        name : this.name,
         email : this.email,
-        num :this.num,
+        num : this.num,
         sede : this.sede,
-        date :this.date,
+        date : this.date,
         time : this.time,
       }
     )
