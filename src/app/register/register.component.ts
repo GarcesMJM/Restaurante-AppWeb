@@ -12,6 +12,7 @@ import { ToastrService } from 'ngx-toastr'
 )
 export class RegisterComponent {
   username: string='';
+  email: string='';
   password: string='';
   confirmPassword: string='';
   readonly APIUrl="http://localhost/";
@@ -34,6 +35,7 @@ export class RegisterComponent {
     axios.post( this.APIUrl+'register',
       {
         username : this.username,
+        email: this.email,
         password : this.password,
       }
     )

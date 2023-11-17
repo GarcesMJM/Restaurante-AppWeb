@@ -81,7 +81,7 @@ export class AdminComponent {
             Swal.fire({
               icon: "error",
               text: res.data,
-              title: "Opss",
+              title: "Opss..",
               showConfirmButton: false,
               timer: 1500
             });       
@@ -112,7 +112,7 @@ export class AdminComponent {
             Swal.fire({
               icon: "error",
               text: res.data,
-              title: "Sesión cerrada",
+              title: "Opss...",
               showConfirmButton: false,
               timer: 1500
             });  
@@ -122,7 +122,7 @@ export class AdminComponent {
         Swal.fire({
           icon: "error",
           text: error,
-          title: "Sesión cerrada",
+          title: "Opss...",
           showConfirmButton: false,
           timer: 1500
         });  
@@ -140,7 +140,13 @@ export class AdminComponent {
       });
       this.router.navigate(['/']);
     } catch (error) {
-      console.log(error);
+      Swal.fire({
+        icon: "error",
+        text: "¡Algo salió mal en el servidor!",
+        title: "Opss...",
+        showConfirmButton: false,
+        timer: 1500
+      });  
     }
   }
 

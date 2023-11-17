@@ -16,7 +16,6 @@ export class BookingComponent {
   sede: string="";
   date: string="";
   time: string="";
-  nombreUsuario: string='';
   readonly APIUrl="http://localhost/";
 
   constructor(private router:Router, private route:ActivatedRoute){}
@@ -24,18 +23,14 @@ export class BookingComponent {
   ngOnInit(): void {
     // Obtén el nombre de usuario desde la ruta y luego obtén la información del usuario
     this.route.params.subscribe(params => {
-      this.nombreUsuario = params['nombreUsuario'];
-      console.log(this.nombreUsuario);
+    this.name = params['nombreUsuario'];
     });
   }
 
   book() {
-
-    if (!this.nombreUsuario || !this.name || !this.email || !this.num || !this.sede || !this.date || !this.time) {
+    if (!this.name || !this.email || !this.num || !this.sede || !this.date || !this.time) {
       alert('Por favor ingrese todos los campos.');
-      return;
-    }
-    console.log(this.nombreUsuario);
+    
     console.log(this.name);
     console.log(this.email);
     console.log(this.num);
@@ -45,7 +40,6 @@ export class BookingComponent {
 
     axios.post( this.APIUrl+'reservar',
       {
-        username: this.nombreUsuario,
         name : this.name,
         email : this.email,
         num : this.num,
@@ -84,7 +78,7 @@ export class BookingComponent {
             this.sede="";
             this.date="";
             this.time="";
-            this.router.navigate(['/perfil', this.nombreUsuario]);
+            this.router.navigate(['/perfil', this.name]);
           }else {
             console.log('¡Algo salió mal en el servidor!');
             Swal.fire({
@@ -103,4 +97,6 @@ export class BookingComponent {
       });
     });
   }
+}
+
 }
