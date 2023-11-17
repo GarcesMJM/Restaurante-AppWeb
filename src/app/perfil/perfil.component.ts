@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CookieService } from 'ngx-cookie';
 import axios from "axios";
 
@@ -9,23 +9,26 @@ import axios from "axios";
 })
 export class PerfilComponent {
   readonly APIUrl="http://localhost/";
-  usuario=null;
+  usuario : any = {};
 
   constructor(private cookieService: CookieService){}
+  
+  ngOnInit(): void {
+    this.obtenerUsuario();
+  }
   
   
   obtenerUsuario(){
 
-
-    axios.post( this.APIUrl+'iniciarsesion',
+    axios.post( this.APIUrl+'obtenerusuario',
       {
-        token: this.cookieService.get('token');
+        token: this.cookieService.get('token')
       }
     )
     .then(
       (res) => {
           if(res && res.data){
-            
+            this.usuario=res.data;
           }else {
             
           }
