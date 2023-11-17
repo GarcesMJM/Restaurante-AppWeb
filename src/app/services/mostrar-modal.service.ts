@@ -7,5 +7,6 @@ export class MostrarModalService {
 
   constructor() { }
 
-  $modal = new EventEmitter<any>();
+  $modalReservas = new EventEmitter<any>();
+  $modalUsuarios = new EventEmitter<any>();
 }

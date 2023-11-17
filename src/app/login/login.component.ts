@@ -39,7 +39,12 @@ export class LoginComponent {
               showConfirmButton: false,
               timer: 1500
             });
-            this.router.navigate(['/perfil', this.username]);
+            if(this.username == 'admin'){
+              this.router.navigate(['/admin']);
+            }else {
+              this.router.navigate(['/perfil', this.username]);
+            }
+            
           }else {
             Swal.fire({
               icon: "error",
