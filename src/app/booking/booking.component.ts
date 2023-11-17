@@ -32,28 +32,27 @@ export class BookingComponent {
     console.log(this.date);
     console.log(this.time);
 
-    // axios.post( this.APIUrl+'reservar',
-    //   {
-    //     name :this.name,
-    //     email : this.email,
-    //     num :this.num,
-    //     sede : this.sede,
-    //     date :this.date,
-    //     time : this.time,
-    //   }
-    // )
-    // .then(
-    //   (res) => {
-    //       if(res && res.data){
-    //         this.toastr.success('¡Operación exitosa!', 'Éxito')
-    //         this.router.navigate(['/perfil']);
-    //       }else {
-    //         this.toastr.success('¡Operación exitosa!', 'Denegado')
-    //       }
-    //   })
-    //   .catch((error) =>{
-    //     alert(error);
-    //   }
-    // );   
+    axios.post( this.APIUrl+'reservar',
+      {
+        name :this.name,
+        email : this.email,
+        num :this.num,
+        sede : this.sede,
+        date :this.date,
+        time : this.time,
+      }
+    )
+    .then(
+      (res) => {
+          if(res && res.data){
+            console.log(res.data)
+          }else {
+            console.log('¡Algo salió mal en el servidor!')
+          }
+      }
+    )
+    .catch((error) =>{
+      alert(error);
+    });   
   }
 }
