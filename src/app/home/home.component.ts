@@ -20,6 +20,12 @@
     Desayuno_4: string;
     Desayuno_5: string;
     Desayuno_6: string;
+    Almuerzo_1: string;
+    Almuerzo_2: string;
+    Almuerzo_3: string;
+    Almuerzo_4: string;
+    Almuerzo_5: string;
+    Almuerzo_6: string;
 
     constructor(private storage: Storage)
     {
@@ -36,6 +42,12 @@
       this.Desayuno_4 = "https://firebasestorage.googleapis.com/v0/b/app-web-81795.appspot.com/o/Menu%2FDesayunos%2Fdesayuno-speck-aleman.jpg?alt=media&token=98e73f6c-8fa7-4fd8-b53f-93b35d66907f";
       this.Desayuno_5 = "https://firebasestorage.googleapis.com/v0/b/app-web-81795.appspot.com/o/Menu%2FDesayunos%2Fdesayuno-aprikosen-aleman.jpg?alt=media&token=2ef8447c-0994-4737-ae65-9c089fb2c844";
       this.Desayuno_6 = "https://firebasestorage.googleapis.com/v0/b/app-web-81795.appspot.com/o/Menu%2FDesayunos%2Fdesayuno-aleman.jpg?alt=media&token=3aba2eca-9a29-42a7-b9ed-0d17e48692bc";
+      this.Almuerzo_1 = "https://firebasestorage.googleapis.com/v0/b/app-web-81795.appspot.com/o/Menu%2FAlmuerzos%2Falmuerzo-pollo-provenzal-frances.jpg?alt=media&token=70dc5c03-a71a-4bc6-b4ea-174eb855aea6";
+      this.Almuerzo_2 = "https://firebasestorage.googleapis.com/v0/b/app-web-81795.appspot.com/o/Menu%2FAlmuerzos%2Falmuerzo-risotto-italiano.jpg?alt=media&token=74ca8d02-6f28-4c30-aedf-cbb3c0c6274a";
+      this.Almuerzo_3 = "https://firebasestorage.googleapis.com/v0/b/app-web-81795.appspot.com/o/Menu%2FAlmuerzos%2Falmuerzo-marengo-frances.jpg?alt=media&token=98867f53-2d3e-44c9-ba8d-1acd3e35cbcb";
+      this.Almuerzo_4 = "https://firebasestorage.googleapis.com/v0/b/app-web-81795.appspot.com/o/Menu%2FAlmuerzos%2Falmuerzo-bistecca-italiano.jpg?alt=media&token=8f7cba61-7ab3-49dc-b100-9ad2ae39d271";
+      this.Almuerzo_5 = "https://firebasestorage.googleapis.com/v0/b/app-web-81795.appspot.com/o/Menu%2FAlmuerzos%2Falmuerzo-ratatouille-frances.jpg?alt=media&token=7b8ac358-7d6b-4f18-bea3-97a51094f2a2";
+      this.Almuerzo_6 = "https://firebasestorage.googleapis.com/v0/b/app-web-81795.appspot.com/o/Menu%2FAlmuerzos%2Falmuerzo-filete-frances.jpg?alt=media&token=473826a1-1094-472e-b93b-4e0499f37a1a";
     }
 
     async ngOnInit()
