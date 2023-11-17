@@ -1,7 +1,6 @@
 import { Component } from "@angular/core";
 import {Router} from "@angular/router";
 import { CookieService } from 'ngx-cookie';
-import { ToastrService } from 'ngx-toastr'
 import Swal from 'sweetalert2';
 import axios from "axios";
 
@@ -16,7 +15,7 @@ export class LoginComponent {
   password: string="";
   readonly APIUrl="http://localhost/";
 
-  constructor(private router: Router,  private toastr: ToastrService,private cookieService: CookieService,) {}
+  constructor(private router: Router, private cookieService: CookieService,) {}
 
   login() {
     if (!this.username || !this.password) {
@@ -33,7 +32,6 @@ export class LoginComponent {
     .then(
       (res) => {
           if(res && res.data){
-            this.toastr.success('¡Operación exitosa!', 'Éxito')
             this.cookieService.put('token', res.data);
             Swal.fire({
               icon: "success",
@@ -41,7 +39,7 @@ export class LoginComponent {
               showConfirmButton: false,
               timer: 1500
             });
-            this.router.navigate(['/perfil']);
+            this.router.navigate(['/perfil', this.username]);
           }else {
             Swal.fire({
               icon: "error",

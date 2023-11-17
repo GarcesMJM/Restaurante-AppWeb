@@ -13,10 +13,12 @@ import { ForgotpwComponent } from './forgotpw/forgotpw.component';
 import { PerfilComponent } from "./perfil/perfil.component";
 import { BookingComponent } from './booking/booking.component';
 import { AdminComponent } from './admin/admin.component';
+import { ModalComponent } from './modal/modal.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterComponent, HomeComponent, ForgotpwComponent, PerfilComponent, BookingComponent, AdminComponent],
-  imports: [FormsModule, BrowserModule,ToastrModule.forRoot(), CookieModule.withOptions(), routing],
+  declarations: [AppComponent, LoginComponent, RegisterComponent, HomeComponent, ForgotpwComponent, PerfilComponent, BookingComponent, AdminComponent, ModalComponent],
+  imports: [FormsModule, BrowserModule,ToastrModule.forRoot(), CookieModule.withOptions(), routing, BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

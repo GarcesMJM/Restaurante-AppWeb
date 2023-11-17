@@ -29,18 +29,32 @@
                 <li><a href="#">Bogotá</a></li>
               </ul>
             </li>
-            <li><a class="btn-book-a-table" routerLink="/booking">Reservar</a></li>
-            <li><a class="btn-book-a-table" routerLink="/#" (click)="cerrarSesion()">Cerrar Sesión</a></li>
           </ul>
         </nav>
   
+        <a class="btn-book-a-table" (click)="irbooking()">Reservar</a>
+        <a class="btn-book-a-table" (click)="abrirModal()">Ver reservas</a>
+        <a class="btn-book-a-table" (click)="cerrarSesion()">Cerrar Sesión</a>
         <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
         <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
   
       </div>
     </header>
+
+    <div class="" *ngIf="mostrarModal == true">
+      <app-modal [titulo]="'Mis Reservas'">
+        <div *ngFor="let reserva of reservas">
+          <i>A nombre de</i><br/><b>{{reserva.name}}</b>
+          <br/><b>Sede: </b>{{reserva.sede}}
+          <br/><b>Fecha: </b> {{reserva.date}}
+          <br/><b>Hora: </b> {{reserva.time}}
+          <br/><b>Personas: </b> {{reserva.num}}
+        </div>
+      </app-modal>
+
+    </div>
   
-    
+        
     <section id="hero" class="hero d-flex align-items-center section-bg">
       <div class="container">
         <div class="row justify-content-between gy-5">

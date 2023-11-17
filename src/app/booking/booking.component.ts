@@ -1,4 +1,6 @@
 import { Component } from "@angular/core";
+import {Router, ActivatedRoute} from "@angular/router";
+
 import Swal from 'sweetalert2';
 import axios from "axios";
 
@@ -14,9 +16,20 @@ export class BookingComponent {
   sede: string="";
   date: string="";
   time: string="";
+  nombreUsuario: string='';
   readonly APIUrl="http://localhost/";
 
+  constructor(private router:Router, private route:ActivatedRoute){}
+
+  ngOnInit(): void {
+    // Obtén el nombre de usuario desde la ruta y luego obtén la información del usuario
+    this.route.params.subscribe(params => {
+      this.nombreUsuario = params['nombreUsuario'];
+    });
+  }
+
   book() {
+
     if (!this.name || !this.email || !this.num || !this.sede || !this.date || !this.time) {
       alert('Por favor ingrese todos los campos.');
       return;
@@ -57,6 +70,7 @@ export class BookingComponent {
             this.sede="";
             this.date="";
             this.time="";
+            this.router.navigate(['/perfil', this.nombreUsuario]);
           }else {
             console.log('¡Algo salió mal en el servidor!');
             Swal.fire({
