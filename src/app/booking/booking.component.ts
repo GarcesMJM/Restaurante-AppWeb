@@ -58,15 +58,26 @@ export class BookingComponent {
       (res) => {
           if(res && res.data){
             console.log(res.data);
-            Swal.fire({
-              title: res.data,
-              html: `<i>A nombre de</i><br/><b>${this.name}</b>
-                    <br/><b>Sede: </b> ${this.sede}
-                    <br/><b>Fecha: </b> ${this.date}
-                    <br/><b>Hora: </b> ${this.time}
-                    <br/><b>Personas: </b> ${this.num}`,
-              icon: "success"
-            });
+
+            if (res.data === '¡Tu reservación ha sido creada!') {
+              Swal.fire({
+                title: res.data,
+                html: `<i>A nombre de</i><br/><b>${this.name}</b>
+                      <br/><b>Sede: </b> ${this.sede}
+                      <br/><b>Fecha: </b> ${this.date}
+                      <br/><b>Hora: </b> ${this.time}
+                      <br/><b>Personas: </b> ${this.num}`,
+                icon: "success"
+              });
+            }
+            else {
+              Swal.fire({
+                title: "No pudimos realizar la reserva",
+                text: res.data,
+                icon: "warning"
+              });
+            }
+
             this.name="";
             this.email="";
             this.num="";
