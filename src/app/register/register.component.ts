@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import {Router} from "@angular/router"
+import Swal from 'sweetalert2';
 import axios from "axios";
 import { ToastrService } from 'ngx-toastr'
 
@@ -38,13 +39,30 @@ export class RegisterComponent {
     )
     .then(
       (res) => {
-         if(res.data == true){
-          this.toastr.success('¡Operación exitosa!', 'Éxito')
+        if(res.data == true){
+          this.toastr.success('¡Operación exitosa!', 'Éxito');
+          Swal.fire({
+            icon: "success",
+            title: "Usuario Registrado",
+            showConfirmButton: false,
+            timer: 1500
+          });
           this.router.navigate(['/login'])
-         }
+        }
+        else {
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "¡Algo sucedió en el servidor!"
+          });
+        }
       })
       .catch((error) =>{
-        alert(error);
+        Swal.fire({
+          title: "Sin conexión con el servidor",
+          text: error,
+          icon: "question"
+        });
       });
   }
 

@@ -4,9 +4,8 @@
     <header id="header" class="header fixed-top d-flex align-items-center">
       <div class="container d-flex align-items-center justify-content-between">
   
-        <a href="#" class="logo d-flex align-items-center me-auto me-lg-0">
+        <a routerLink="/perfil" class="logo d-flex align-items-center me-auto me-lg-0">
           <h1>Maikena<span>.</span></h1>
-          <h1>Hola, {{ usuario.username }}<span>.</span></h1>
         </a>
   
         <nav id="navbar" class="navbar">
@@ -30,12 +29,11 @@
                 <li><a href="#">Bogotá</a></li>
               </ul>
             </li>
-            <li><a href="perfil/#contact">Contacto</a></li>
+            <li><a class="btn-book-a-table" routerLink="/booking">Reservar</a></li>
+            <li><a class="btn-book-a-table" routerLink="/#" (click)="cerrarSesion()">Cerrar Sesión</a></li>
           </ul>
         </nav>
   
-        <a class="btn-book-a-table" routerLink="/booking">Reservar</a>
-        <a class="btn-book-a-table" routerLink="/#" (click)="cerrarSesion()">Cerrar Sesión</a>
         <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
         <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
   
@@ -47,7 +45,7 @@
       <div class="container">
         <div class="row justify-content-between gy-5">
           <div class="col-lg-5 order-2 order-lg-1 d-flex flex-column justify-content-center align-items-center align-items-lg-start text-center text-lg-start">
-            <h2 data-aos="fade-up">La mejor cadena de restaurantes<br />En todo Medellín</h2>
+            <h2 data-aos="fade-up"><span>¡</span>Bienvenido, {{ usuario.username }}<span>!</span></h2>
             <p data-aos="fade-up" data-aos-delay="100">Maikena es una cadena de restaurantes Colombiana que ofrece la más diversa variedad de cocina Europea</p>
             <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
             </div>
