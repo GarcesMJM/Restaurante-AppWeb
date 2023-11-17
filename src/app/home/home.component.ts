@@ -14,6 +14,12 @@
     Entrada_4: string;
     Entrada_5: string;
     Entrada_6: string;
+    Desayuno_1: string;
+    Desayuno_2: string;
+    Desayuno_3: string;
+    Desayuno_4: string;
+    Desayuno_5: string;
+    Desayuno_6: string;
 
     constructor(private storage: Storage)
     {
@@ -24,6 +30,12 @@
       this.Entrada_4 = "https://firebasestorage.googleapis.com/v0/b/app-web-81795.appspot.com/o/Menu%2FEntradas%2Ftabla-tzatziki.png?alt=media&token=0b48005a-2a07-46f6-80da-7232df6007ec";
       this.Entrada_5 = "https://firebasestorage.googleapis.com/v0/b/app-web-81795.appspot.com/o/Menu%2FEntradas%2Ftabla-hummus.jpg?alt=media&token=05918c8a-5c92-4ae0-88bb-3361827045f9";
       this.Entrada_6 = "https://firebasestorage.googleapis.com/v0/b/app-web-81795.appspot.com/o/Menu%2FEntradas%2Ftabla-pierogi.png?alt=media&token=54ef3e08-253b-4963-addd-7cd365d086d9";
+      this.Desayuno_1 = "https://firebasestorage.googleapis.com/v0/b/app-web-81795.appspot.com/o/Menu%2FDesayunos%2Fdesayuno-huevoesp.jpg?alt=media&token=d591a819-8e6e-4690-a350-75482e30da25";
+      this.Desayuno_2 = "https://firebasestorage.googleapis.com/v0/b/app-web-81795.appspot.com/o/Menu%2FDesayunos%2Fdesayuno-muesli-suizo.jpg?alt=media&token=bcbd6680-011e-48b9-a953-faadf95194e6";
+      this.Desayuno_3 = "https://firebasestorage.googleapis.com/v0/b/app-web-81795.appspot.com/o/Menu%2FDesayunos%2Fdesayuno-senfei-aleman.jpg?alt=media&token=47ae3f3b-ebc5-4c87-9afb-1109360ba045";
+      this.Desayuno_4 = "https://firebasestorage.googleapis.com/v0/b/app-web-81795.appspot.com/o/Menu%2FDesayunos%2Fdesayuno-speck-aleman.jpg?alt=media&token=98e73f6c-8fa7-4fd8-b53f-93b35d66907f";
+      this.Desayuno_5 = "https://firebasestorage.googleapis.com/v0/b/app-web-81795.appspot.com/o/Menu%2FDesayunos%2Fdesayuno-aprikosen-aleman.jpg?alt=media&token=2ef8447c-0994-4737-ae65-9c089fb2c844";
+      this.Desayuno_6 = "https://firebasestorage.googleapis.com/v0/b/app-web-81795.appspot.com/o/Menu%2FDesayunos%2Fdesayuno-aleman.jpg?alt=media&token=3aba2eca-9a29-42a7-b9ed-0d17e48692bc";
     }
 
     async ngOnInit()
