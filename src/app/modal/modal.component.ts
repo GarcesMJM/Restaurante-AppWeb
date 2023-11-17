@@ -8,11 +8,16 @@ import { MostrarModalService } from '../services/mostrar-modal.service';
 })
 export class ModalComponent {
   @Input() titulo: string = 'Modal';
+  @Input() value: string="";
   
   constructor(private modalSS:MostrarModalService){}
 
-  cerrarModal():void {
-    this.modalSS.$modal.emit(false);
+  cerrarReservas():void {
+    this.modalSS.$modalReservas.emit(false);
+  }
+
+  cerrarUsuarios():void {
+    this.modalSS.$modalUsuarios.emit(false);
   }
 
 }

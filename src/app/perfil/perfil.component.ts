@@ -22,7 +22,7 @@ export class PerfilComponent {
   
   ngOnInit(): void {
     this.obtenerUsuario();
-    this.modalSS.$modal.subscribe((valor)=>(this.mostrarModal = valor));
+    this.modalSS.$modalReservas.subscribe((valor)=>(this.mostrarModal = valor));
   } 
   
   abrirModal(): void {
