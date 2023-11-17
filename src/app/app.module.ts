@@ -15,10 +15,12 @@ import { BookingComponent } from './booking/booking.component';
 import { AdminComponent } from './admin/admin.component';
 import { ModalComponent } from './modal/modal.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { getStorage, provideStorage } from '@angular/fire/storage';
 
 @NgModule({
   declarations: [AppComponent, LoginComponent, RegisterComponent, HomeComponent, ForgotpwComponent, PerfilComponent, BookingComponent, AdminComponent, ModalComponent],
-  imports: [FormsModule, BrowserModule,ToastrModule.forRoot(), CookieModule.withOptions(), routing, BrowserAnimationsModule],
+  imports: [FormsModule, BrowserModule,ToastrModule.forRoot(), CookieModule.withOptions(), routing, BrowserAnimationsModule, provideFirebaseApp(() => initializeApp({"projectId":"app-web-81795","appId":"1:872729463288:web:5b89dd409f654d4fb76e0d","storageBucket":"app-web-81795.appspot.com","apiKey":"AIzaSyDuYJhImKyNoe3VyPb1PlsOn3jM2ZEKj6w","authDomain":"app-web-81795.firebaseapp.com","messagingSenderId":"872729463288"})), provideStorage(() => getStorage())],
   providers: [],
   bootstrap: [AppComponent],
 })
